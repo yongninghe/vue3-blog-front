@@ -1,11 +1,11 @@
 <template>
   <div class="example-pagination-block" style="alignment: center">
-    <el-pagination layout="prev, pager, next" :total="1000" />
+    <el-pagination layout="prev, pager, next" :total="1000"/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 
 export default defineComponent({
   name: 'BlogFooter',
@@ -20,6 +20,7 @@ export default defineComponent({
   align-content: center;
   alignment: center;
 }
+
 .example-pagination-block .example-demonstration {
   margin-bottom: 16px;
   align-content: center;
