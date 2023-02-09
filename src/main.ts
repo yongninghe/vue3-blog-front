@@ -10,4 +10,8 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
+// 引入mocks，测试接口
+if (process.env.NODE_ENV === "development") {
+    require("./mock");
+}
 app.use(store).use(router).use(ElementPlus).mount('#app')

@@ -18,10 +18,10 @@ export default defineComponent({
     //   getList();
     // });
     const getList = () => {
-      axios.post('/getData', {userName: "userName"})
+      axios.post('/api/getUseList', {userName: "userName"})
           .then((res) => {
             console.log(res)
-            return res;
+            logList.value = res.data.data;
           })
           .catch(() => {
             console.log("error")
