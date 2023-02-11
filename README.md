@@ -1,5 +1,5 @@
 # blog-front
-一个用于学习的vue3+elementplus+axios+mock 前端工程
+一个后端程序员用于学习的vue3+elementplus+axios+mock 前端工程，暂无参考价值，请不要下载。
 
 ## Project setup
 ```
