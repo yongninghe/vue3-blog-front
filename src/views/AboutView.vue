@@ -1,8 +1,6 @@
 <template>
-  <div>这是为了学习vue做的一个blog系统</div>
   <el-row class="mb-4">
-    <el-button @click="clickFunction">testAPI</el-button>
-    <p v-cloak>{{ logList }}</p>
+    <p v-cloak>{{ about }}</p>
   </el-row>
 </template>
 <script lang="ts">
@@ -13,28 +11,23 @@ export default defineComponent({
   name: 'AboutView',
   components: {},
   setup() {
-    const logList = ref();
-    // onMounted(() => {
-    //   getList();
-    // });
-    const getList = () => {
-      axios.post('/api/getUseList', {userName: "userName"})
+    const about = ref();
+    onMounted(() => {
+      getAbout();
+    });
+    const getAbout = () => {
+      axios.post('/api/getAbout', {paramName: "参数名称"})
           .then((res) => {
             console.log(res)
-            logList.value = res.data.data;
+            about.value = res.data.data;
           })
           .catch(() => {
             console.log("error")
-            logList.value = ['111', '222'];
+            about.value = "一个后端程序员用于学习的vue3+elementplus+axios+mock的前端工程（网络发生错误后的取值）";
           });
     };
-    const clickFunction = () => {
-      alert("click");
-      getList();
-    };
     return {
-      logList,
-      clickFunction
+      about
     }
   }
 });

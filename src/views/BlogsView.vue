@@ -14,10 +14,11 @@
   </div>
 </template>
 <script lang="ts">
-import {ref, toRefs, reactive, defineComponent} from 'vue'
+import {ref, toRefs, reactive, defineComponent, onMounted} from 'vue'
 import BlogHeader from '@/components/BlogHeader.vue'; // @ is an alias to /src
 import BlogItem from '@/components/BlogItem.vue';
 import BlogFooter from '@/components/BlogFooter.vue';
+import axios from "axios";
 
 export default defineComponent({
   name: 'BlogsView',
@@ -26,24 +27,34 @@ export default defineComponent({
     BlogItem,
     BlogFooter
   },
+
   setup() {
-    const blogItems = ref([{
-      date: '2016-05-03',
-      title: '这是第1篇博客',
-      abstract: '这是内容摘要1',
-    },
-      {
-        date: '2017-05-03',
-        title: '这是第2篇博客',
-        abstract: '这是内容摘要2',
-      },
-      {
-        date: '2018-05-03',
-        title: '这是第3篇博客',
-        abstract: '这是内容摘要3',
-      }])
+    const blogItems = ref();
+    onMounted(() => {
+      getLogList();
+    });
+    const getLogList = () => {
+      axios.post('/api/getLogList', {userName: "userName"})
+          .then((res) => {
+            console.log(res)
+            blogItems.value = res.data.data;
+          })
+          .catch(() => {
+            console.log("error")
+            blogItems.value = [{
+              'date': "这是时间",
+              'title': "文章文章标题",
+              'abstract': "这是文章摘要"
+            }];
+          });
+    };
+    const clickFunction = () => {
+      alert("click");
+      getLogList();
+    };
     return {
       blogItems: blogItems,
+      clickFunction
     }
   }
 });
