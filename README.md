@@ -1,5 +1,5 @@
 # blog-front
-一个后端程序员用于学习的vue3+elementplus+axios+mock 前端工程，暂无参考价值，请不要下载。
+一个后端程序员用于学习前端技术的工程。包括vue3 、elementplus、axios、moc等。
 
 ## Project setup
 ```
