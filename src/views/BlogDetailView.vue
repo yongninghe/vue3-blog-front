@@ -1,52 +1,38 @@
 <template>
   <el-row>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
-        标题：
-      </div>
+      <div>标题：</div>
     </el-col>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
+      <div>
         {{ title }}
       </div>
     </el-col>
   </el-row>
   <el-row>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
-        作者:
-      </div>
+      <div>作者:</div>
     </el-col>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
-        {{ author }}
-      </div>
+      <div>{{ author }}</div>
     </el-col>
   </el-row>
   <el-row>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
-        发表时间：
-      </div>
+      <div>发表时间：</div>
     </el-col>
     <el-col :span="12">
-      <div class="grid-content ep-bg-purple-dark">
-        {{ date }}
-      </div>
+      <div>{{ date }}</div>
     </el-col>
   </el-row>
   <el-row>
     <el-col :span="24">
-      <div class="grid-content ep-bg-purple-dark">
-        文章正文
-      </div>
+      <div>文章正文</div>
     </el-col>
   </el-row>
   <el-row style="height: 400px">
     <el-col :span="24">
-      <div>
-        {{ content }}
-      </div>
+      <div>{{ content }}</div>
     </el-col>
   </el-row>
   <el-row>
@@ -56,7 +42,7 @@
   </el-row>
 </template>
 <script lang="ts">
-import {ref, toRefs, reactive, defineComponent, onMounted} from 'vue'
+import {ref, defineComponent, onMounted} from 'vue'
 import axios from "axios";
 import {useRouter} from "vue-router";
 
