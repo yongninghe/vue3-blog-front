@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
         component: BlogsView
     },
     {
-        path: "/blogs/1",
+        path: "/blog/:id",
         name: "日志详情",
         component: () => import('../views/BlogDetailView.vue')
     },
@@ -28,8 +28,6 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes
 })
-
-
 
 
 export default router

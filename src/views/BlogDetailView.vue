@@ -58,24 +58,32 @@
 <script lang="ts">
 import {ref, toRefs, reactive, defineComponent, onMounted} from 'vue'
 import axios from "axios";
+import {useRouter} from "vue-router";
 
 export default defineComponent({
   name: 'BlogDetailView',
   components: {},
 
   setup() {
+    const $router = useRouter();
     const title = ref();
     const date = ref();
     const author = ref();
     const content = ref();
+    const id = ref();
     const blogItem = ref();
     onMounted(() => {
+      getId();
       getBlogItem();
     });
+    const getId = () => {
+      console.log($router)
+      // 获取路径上传来的id
+      id.value = $router.currentRoute.value.params.id;
+    };
     const getBlogItem = () => {
-      axios.post('/api/getBLogById', {userName: "userName"})
+      axios.post('/api/blog', {id: id.value})
           .then((res) => {
-            console.log(res)
             blogItem.value = res.data.data;
             title.value = blogItem.value.title;
             date.value = blogItem.value.date;
@@ -83,25 +91,16 @@ export default defineComponent({
             content.value = blogItem.value.content;
           })
           .catch(() => {
-            console.log("error")
-            blogItem.value = [{
-              'id': "1",
-              'date': "这是时间",
-              'title': "文章标题",
-              'author': "yongninghe",
-              'abstract': "这是文章摘要",
-              'content': "这是正文\n、这是正文\n,这是正文\n"
-            }];
+            blogItem.value = [{}];
           });
     };
     const goBack = () => {
-      //todo: 没有搞定$router.push， 暂时用history.back()
-      history.back();
+
       if (window.history.length <= 1) {
-        // (this as any).$router.push({path:'/'})
+        $router.push({path: '/'})
         return false
       } else {
-        // (this as any).$router.go(-1)
+        $router.go(-1)
       }
     };
     return {

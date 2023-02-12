@@ -5,9 +5,11 @@
       <el-table-column prop="date" label="时间"/>
       <el-table-column prop="abstract" label="摘要"/>
       <el-table-column label="查看详情">
+        <template v-slot="scope">
         <el-button link type="primary" size="large">
-          <router-link v-bind:to="'/blogs/1'">查看</router-link>
+          <router-link v-bind:to="'/blog/'+scope.row.id">查看</router-link>
         </el-button>
+          </template>
       </el-table-column>
     </el-table>
   </div>
@@ -22,7 +24,7 @@ export default defineComponent({
     blogItems: Array,
   },
   setup() {
-    console.log("setup")
+    // 传参
     const showDetail = (id: number) => {
       alert("click showDetail" + id);
     };
