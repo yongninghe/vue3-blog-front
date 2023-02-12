@@ -11,11 +11,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "日志列表",
         component: BlogsView
     },
-    // {
-    //     path: "/blogs/:id",
-    //     name: "日志详情",
-    //     component: () => import('../views/CityDetail.vue')
-    // },
+    {
+        path: "/blogs/1",
+        name: "日志详情",
+        component: () => import('../views/BlogDetailView.vue')
+    },
     {
         path: '/about',
         name: 'about',

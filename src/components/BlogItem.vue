@@ -1,13 +1,13 @@
 <template>
   <div class="content">
-    <el-table :data="blogItems" stripe >
-      <el-table-column prop="title" label="标题" />
+    <el-table :data="blogItems" stripe>
+      <el-table-column prop="title" label="标题"/>
       <el-table-column prop="date" label="时间"/>
       <el-table-column prop="abstract" label="摘要"/>
       <el-table-column label="查看详情">
-        <template #default>
-          <el-button link type="primary" size="small" @click="showDetail(1)">详情</el-button>
-        </template>
+        <el-button link type="primary" size="large">
+          <router-link v-bind:to="'/blogs/1'">查看</router-link>
+        </el-button>
       </el-table-column>
     </el-table>
   </div>

@@ -22,6 +22,26 @@ export default [
             })
         }
     },
+
+    {
+        url: "/api/getBLogById",
+        type: "post",
+        getData: (param) => {
+            return Mock.mock({
+                code: 200,
+                message: "success",
+                param: param,
+                "data": {
+                    'id': "1",
+                    'date': "这是时间",
+                    'title': "文章文章标题",
+                    'author': "yongninghe",
+                    'abstract': "这是文章摘要",
+                    'content': "这是正文\n、这是正文\n,这是正文\n"
+                }
+            })
+        }
+    },
     {
         url: "/api/getAbout",
         type: "post",
