@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link to="/">博客|</router-link>
+    <router-link to="/about">关于我</router-link>
   </nav>
   <div class="container">
     <div class="row">

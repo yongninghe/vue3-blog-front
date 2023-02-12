@@ -20,7 +20,7 @@ import BlogContent from '@/components/BlogContent.vue';
 import BlogFooter from '@/components/BlogFooter.vue';
 
 export default defineComponent({
-  name: 'HomeView',
+  name: 'BlogsView',
   components: {
     BlogHeader,
     BlogContent,
