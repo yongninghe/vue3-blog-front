@@ -14,9 +14,10 @@ export default [
                 message: "success",
                 param: param,
                 "data|1-5": [{
+                    'id': "1",
                     'date': "时间",
                     'title': "文章文章标题",
-                    'abstract': "这是文章摘要",
+                    'abstract': "这是文章摘要"
                 }]
             })
         }

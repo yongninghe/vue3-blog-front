@@ -42,19 +42,15 @@ export default defineComponent({
           .catch(() => {
             console.log("error")
             blogItems.value = [{
+              'id': "1",
               'date': "这是时间",
               'title': "文章文章标题",
               'abstract': "这是文章摘要"
             }];
           });
     };
-    const clickFunction = () => {
-      alert("click");
-      getLogList();
-    };
     return {
-      blogItems: blogItems,
-      clickFunction
+      blogItems: blogItems
     }
   }
 });
