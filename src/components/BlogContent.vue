@@ -21,8 +21,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.content {
-  width: 700px;
-  alignment: center;
-}
 </style>
