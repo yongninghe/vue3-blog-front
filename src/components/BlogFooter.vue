@@ -1,5 +1,5 @@
 <template>
-  <div class="example-pagination-block" style="alignment: center">
+  <div>
     <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -35,18 +35,4 @@ export default defineComponent({
   }
 }
 })
-;
 </script>
-<style scoped>
-.example-pagination-block + .example-pagination-block {
-  margin-top: 10px;
-  align-content: center;
-  alignment: center;
-}
-
-.example-pagination-block .example-demonstration {
-  margin-bottom: 16px;
-  align-content: center;
-  alignment: center;
-}
-</style>
