@@ -15,7 +15,7 @@ export default [
                 param: param,
                 "data|1-5": [{
                     'id': "1",
-                    'date': "时间",
+                    'date': "2023-02-12",
                     'title': "文章文章标题",
                     'abstract': "这是文章摘要"
                 }]
