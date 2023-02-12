@@ -8,7 +8,7 @@
       <router-view/>
     </div>
   </div>
-  <Footer>this is footer</Footer>
+  <FooterView></FooterView>
 </template>
 
 <style>
@@ -33,3 +33,6 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
+<script setup lang="ts">
+import FooterView from "@/views/FooterView.vue";
+</script>
